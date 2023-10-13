@@ -1,1 +1,1 @@
-export { default as Stonework } from "./Stonework";
+export { default as ColumnStonework } from "./ColumnStonework";
