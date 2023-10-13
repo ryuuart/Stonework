@@ -15,13 +15,13 @@
     "jsx": "react-jsx",
 
     /* Exposed Types */
-    "types": ["node", "vite/client"],
+    "types": ["vite/client"],
 
     /* Path setup */
     "baseUrl": ".",
-    // "paths": {
-    //   "@pathname/*": ["src/*"]
-    // },
+    "paths": {
+      "@styles/*": ["src/styles/*"]
+    },
 
     /* Linting */
     "strict": true,
