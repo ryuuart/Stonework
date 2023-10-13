@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function () {
   const [content] = useState<React.ReactElement[][]>([
     [
-      <ExampleContent width={100} height={100} />,
+      <ExampleContent width={"auto"} height={"auto"} aspectRatio="1 / 1" />,
       <ExampleContent width={200} height={200} />,
     ],
     [

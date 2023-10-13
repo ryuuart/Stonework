@@ -4,9 +4,15 @@ interface Props {
   width: number | string;
   height: number | string;
   color?: string;
+  aspectRatio?: string;
 }
 
-export default function ({ width, height, color = "red" }: Props) {
+export default function ({
+  width,
+  height,
+  color = "red",
+  aspectRatio = "auto",
+}: Props) {
   const [count, setCount] = useState(Math.round(Math.random() * 100));
   const intervalId = useRef(0);
 
@@ -26,6 +32,7 @@ export default function ({ width, height, color = "red" }: Props) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        aspectRatio,
         width,
         height,
         background: color,
