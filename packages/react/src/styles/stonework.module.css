@@ -1,0 +1,21 @@
+.stonework {
+  overflow: hidden;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  gap: var(--stonework-gap);
+}
+
+.stonework > * {
+  overflow: hidden;
+
+  display: flex;
+  flex: 1;
+
+  gap: var(--stonework-gap);
+}
+
+.stonework_column {
+  flex-flow: column nowrap;
+}
