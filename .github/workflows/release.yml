@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - placeholder # replace with "main" once configured
+      - main
 
 jobs:
   release:
@@ -25,19 +25,17 @@ jobs:
           version: 8
 
       - name: Install Deps
-        run: pnpm install
-
-      - name: Test Project
-        run: pnpm test
+        run: pnpm --filter stonework-react install
 
       - name: Build Project
-        run: pnpm build
+        run: pnpm nx build stonework-react
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
-          # This expects you to have a script called release which does a build for your packages and calls changeset publish
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
