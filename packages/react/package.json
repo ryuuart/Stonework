@@ -2,6 +2,7 @@
   "name": "stonework-react",
   "version": "0.1.0",
   "description": "A collection of masonry grid solutions for React",
+  "type": "module",
   "files": [
     "dist"
   ],
@@ -15,13 +16,14 @@
   "author": "Long Nguyen",
   "license": "MIT",
   "devDependencies": {
-    "@types/react-dom": "^18.2.13",
-    "@vitejs/plugin-react": "^4.1.0",
     "@types/node": "18.11.9",
     "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "@vitejs/plugin-react": "^4.1.0",
     "@vitest/coverage-v8": "^0.34.6",
     "typescript": "^5.2.2",
     "vite": "^4.4.11",
+    "vite-plugin-css-injected-by-js": "^3.3.0",
     "vite-plugin-dts": "^3.6.0",
     "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^0.34.6"
@@ -30,6 +32,23 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/stoneworkReact.js"
+      },
+      "require": "./dist/stoneworkReact.umd.cjs"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/stoneworkReact.umd.cjs",
+  "module": "./dist/stoneworkReact.js",
   "nx": {
     "targets": {
       "dev": {
