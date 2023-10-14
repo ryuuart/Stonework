@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "version": "changeset version && pnpm install --no-frozen-lockfile",
-    "release": "pnpm publish stonework-react && changeset publish"
+    "release": "pnpm publish packages/react && changeset publish"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
